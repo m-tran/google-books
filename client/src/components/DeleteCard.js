@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const BookCard = (props) => {
+const DeleteCard = (props) => {
 
     const [book, setBook] = useState({
         title: "",
@@ -68,7 +68,7 @@ const BookCard = (props) => {
         console.log(state);
         return new Promise((resolve, reject) => {
             axios({
-                method: "POST",
+                method: "DELETE",
                 url: `http://localhost:5000/api/books`,
                 headers: {'Content-Type':'application/x-www-form-urlencoded'},
                 data: {
@@ -80,7 +80,7 @@ const BookCard = (props) => {
                 },
             })
             .then((response) => {
-                console.log(response.data);
+                console.log(response);
                 resolve(response);
             })
             .catch(err => {
@@ -118,7 +118,7 @@ const BookCard = (props) => {
                             color="primary"
                             onClick={submitState}
                         >
-                            Add
+                            Delete
                         </Button>
                         <Button size="small" color="primary" href={props.link}>
                             Link
@@ -147,4 +147,4 @@ const BookCard = (props) => {
     )
 }
 
-export default BookCard;
+export default DeleteCard;

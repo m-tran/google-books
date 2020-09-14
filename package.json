@@ -1,11 +1,13 @@
 {
-  "name": "google_books",
+  "name": "googlebooks",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "client": "npm start --prefix client",
+    "server": "nodemon server.js",
     "dev": "concurrently \"nodemon server.js\" \"npm run client\"",
     "build": "cd client/ && npm install && npm run build"
   },
@@ -22,6 +24,7 @@
   "homepage": "https://github.com/m-tran/google-books#readme",
   "dependencies": {
     "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.10.3"
   }

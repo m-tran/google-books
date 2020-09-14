@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const useFetch = (query) => {
-    console.log(query);
     return new Promise((resolve, reject) => {
         axios({
             method: "GET",

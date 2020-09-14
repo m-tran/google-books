@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 import SearchBar from "../components/SearchBar";
 import BookCard from "../components/Card";
@@ -21,21 +21,17 @@ function Search() {
             const data = res.data.items;
             return data;
         })
-            .then((data) => {
-                return setResult(data);
-            });
+        .then((data) => {
+            return setResult(data);
+        });
     };
-
-    useEffect(() => {
-        console.log(result);
-    }, [result]);
 
     let card = result.map((item, i) => {
         return (
             <Grid item xs={12}>
                 <BookCard
                     key={item.id}
-                    bookTitle={item.volumeInfo && item.volumeInfo.title}
+                    title={item.volumeInfo && item.volumeInfo.title}
                     author={item.volumeInfo && item.volumeInfo.authors}
                     image={item.volumeInfo && item.volumeInfo.imageLinks.thumbnail}
                     description={item.volumeInfo && item.volumeInfo.description}

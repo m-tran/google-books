@@ -11,10 +11,10 @@ const Header = () => {
         <Router>
             <div>
                 <header>
-                    <Button color="white">
+                    <Button color="primary">
                         <Link to="/">Search</Link>
                     </Button>
-                    <Button color="white">
+                    <Button color="primary">
                         <Link to="/saved">Saved</Link>
                     </Button>
                 </header>

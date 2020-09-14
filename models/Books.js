@@ -4,20 +4,19 @@ const Schema = mongoose.Schema;
 const BooksSchema = new Schema({
     title: {
         type: String,
-        required: "String is required"
     },
-    author: {
+    authors: {
+        type: Array,
+    },
+    description: {
         type: String,
-        required: "String is required"
     },
-    ISBNS: [{
-        isbn10: {
-            type: String
-        },
-        isbn13: {
-            type: String
-        }
-    }]
+    image: {
+        type: String,
+    },
+    link: {
+        type: String,
+    }
 });
 
 const Books = mongoose.model("Books", BooksSchema);
